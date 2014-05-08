@@ -7,6 +7,7 @@ gem 'actionpack', RAILS_VERSION
 gem 'railties', RAILS_VERSION
 
 gem 'mongoid'
+gem 'puma'
 
 gem 'mongoid_rails_migrations'
 gem 'devise'
@@ -87,16 +88,13 @@ end
 
 group :development do
   gem 'capistrano', '~> 2.0', :require => false
+  gem 'capistrano-puma', require: false
 
   # better errors
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'foreman', :require => false
-
-  # Use puma for development
-  gem 'puma', :require => false
-
 end
 
 group :test do
@@ -108,11 +106,6 @@ group :test do
   gem 'coveralls', :require => false
   gem 'mongoid-rspec', :require => false
 end
-
-group :heroku, :production do
-  gem 'unicorn', :require => false
-end
-
 
 # Gems used only for assets and not required
 # in production environments by default.
