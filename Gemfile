@@ -87,8 +87,8 @@ group :development, :test do
 end
 
 group :development do
-  gem 'capistrano', '~> 2.0', :require => false
-  gem 'capistrano-puma', require: false
+  gem 'mina'
+  gem 'mina-puma'
 
   # better errors
   gem 'better_errors'
